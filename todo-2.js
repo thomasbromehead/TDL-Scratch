@@ -6,7 +6,7 @@ var todoList = {
     console.log("My todos: ", this.todos);
   },
   addTodo: function(todo){
-    todos[position] = newValue;
+    this.todos.push(todo);
     this.displayTodos();
   },
   changeTodo: function(position, newValue){
@@ -18,3 +18,4 @@ var todoList = {
     this.displayTodos();
   }
 };
+  
