@@ -77,6 +77,23 @@ var handlers = {
     todoList.addTodo(newTodoText);
     newTodo.value="";
   },
+  changeTodo: function(){
+    var changeTodoIndex = document.getElementById('changeTodoNumberInput');
+    var changeTodoText = document.getElementById('changedTodoTextInput');
+    todoList.changeTodo(changeTodoIndex.valueAsNumber, changeTodoText.value);
+    changeTodoIndex.value="";
+    changeTodoText.value="";
+  },
+  deleteTodo: function(){
+    var deleteToDoNumber = document.getElementById('deleteTodoNumberInput');
+    todoList.deleteTodo(deleteToDoNumber.valueAsNumber);
+    deleteToDoNumber.value = 0;
+  },
+  toggleTodo: function(){
+    var toggleTodo= document.getElementById('toggleSingleTodo');
+    todoList.toggleCompleted(toggleTodo.valueAsNumber);
+    toggleTodo.value="0";
+  }
 };
 
 
