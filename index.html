@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+
+  <body>
+    
+    <h1>Hello Plunker!</h1>
+    
+    <div>
+      <button onclick="handlers.displayTodos()" id="displayTodos">Display To-dos</button>
+      <button onclick="handlers.toggleAll()" id="toggleAll">Toggle All</button>
+    </div>
+    
+    <div>
+      <br />
+      <button onclick="handlers.addTodo()" id="addTodo" type="submit">Add a to-do</button>
+      <input type="text" id="addTodoTextInput" value="Add me" />
+      <br />
+      <br />
+      <button onclick="handlers.changeTodo()" id="changeTodo" type="submit">Change a to-do</button>
+      <input type="number" id="changeTodoNumberInput" value="" />
+      <input type="text" id="changedTodoTextInput" value="" />
+    </div>
+    
+    <div>
+      <br />
+      <button onclick="handlers.deleteTodo()" id="deleteTodo" type="submit">Delete a to-do</button>
+      <input style="padding-left:10px" type="number" id="deleteTodoNumberInput" value="0" />
+      <br />
+      <br />
+      <button onclick="handlers.toggleTodo()" id="toggleTodo" type="submit">Toggle a To-do</button>
+      <input type="number" id="toggleSingleTodo" value="0" />
+    </div>
+    
+    <div>
+      <br />
+      <br />
+      <button onclick = "view.displayTodos()" type="submit">Display To-dos in the DOM</button>
+    </div>
+    
+      <ul>
+        
+      </ul>
+    
+    <script src="script.js"></script>
+  </body>
+
+</html>
