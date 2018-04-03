@@ -67,9 +67,9 @@ var todoList = {
 };
 
 var handlers = {
-  // displayTodos: function(){
-  //   todoList.displayTodos();
-  // },
+  displayTodos: function(){
+    todoList.displayTodos();
+  },
   toggleAll: function(){
     todoList.toggleAll();
     view.displayTodos();
@@ -89,10 +89,8 @@ var handlers = {
     changeTodoText.value="";
     view.displayTodos();
   },
-  deleteTodo: function(){
-    var deleteToDoNumber = document.getElementById('deleteTodoNumberInput');
-    todoList.deleteTodo(deleteToDoNumber.valueAsNumber);
-    deleteToDoNumber.value = 0;
+  deleteTodo: function(position){
+    todoList.deleteTodo(position);
     view.displayTodos();
   },
   toggleTodo: function(){
@@ -118,23 +116,32 @@ var view = {
         todoTextWithCompletion = '( )' + todo.todoText;
       }
       
+      todoLi.id = i;
       todoLi.innerHTML = todoTextWithCompletion;
+      todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
     }
    
+  },
+  createDeleteButton : function(){
+    var deleteButton = document.createElement('button');
+    deleteButton.textContent = "Delete item";
+    deleteButton.className = 'deleteButton';
+    return deleteButton;
+  },
+  setUpEventListeners: function(){
+        var todosUl = document.querySelector('ul');
+        todosUl.addEventListener('click', function(event){
+      
+        //Get the element that was clicked on.
+      
+        var elementClicked = event.target;
+        var parentElementClicked = event.target.parentNode.id
+        if (elementClicked.className === "deleteButton"){
+        // Delete LI item, ie: run handlers.deleteTodo();
+          handlers.deleteTodo(parseInt(parentElementClicked));
+      }
+    });
   }
-};
 
-// var displayTodosButton = document.getElementById('displayTodos');
-// var toggleAllButton = document.getElementById('toggleAll');
-
-// displayTodosButton.addEventListener('click', function(){
-//   todoList.displayTodos();
-// })
-
-// toggleAllButton.addEventListener('click', function(){
-//   todoList.toggleAll();
-//   })
-  
-  
-  
+view.setUpEventListeners();
