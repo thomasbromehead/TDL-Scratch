@@ -3,15 +3,17 @@
 var todoList = {
   todos : [],
   displayTodos: function(){
+    var listContainer = document.querySelector('ul');
+    var todoLi = document.createElement('li');
+    
     if(this.todos.length === 0){
-      console.log("Your to-list is empty!");
+      alert("Your to-list is empty!");
     } else {
-      //console.log("My todos: ", this.todos);
       for(var i = 0; i<this.todos.length; i++){
         if (this.todos[i].completed === true){
-          console.log('(x) ', this.todos[i].todoText);
+          console.log('(x)', this.todos[i].todoText);
         } else {
-           console.log('( ) ', this.todos[i].todoText);
+          console.log('( ) ', this.todos[i].todoText);
           }
       }
     }
@@ -65,17 +67,19 @@ var todoList = {
 };
 
 var handlers = {
-  displayTodos: function(){
-    todoList.displayTodos();
-  },
+  // displayTodos: function(){
+  //   todoList.displayTodos();
+  // },
   toggleAll: function(){
     todoList.toggleAll();
+    view.displayTodos();
   },
   addTodo: function(){
     var newTodo = document.getElementById('addTodoTextInput');
     var newTodoText = newTodo.value;
     todoList.addTodo(newTodoText);
     newTodo.value="";
+    view.displayTodos();
   },
   changeTodo: function(){
     var changeTodoIndex = document.getElementById('changeTodoNumberInput');
@@ -83,30 +87,54 @@ var handlers = {
     todoList.changeTodo(changeTodoIndex.valueAsNumber, changeTodoText.value);
     changeTodoIndex.value="";
     changeTodoText.value="";
+    view.displayTodos();
   },
   deleteTodo: function(){
     var deleteToDoNumber = document.getElementById('deleteTodoNumberInput');
     todoList.deleteTodo(deleteToDoNumber.valueAsNumber);
     deleteToDoNumber.value = 0;
+    view.displayTodos();
   },
   toggleTodo: function(){
     var toggleTodo= document.getElementById('toggleSingleTodo');
     todoList.toggleCompleted(toggleTodo.valueAsNumber);
     toggleTodo.value="0";
+    view.displayTodos();
   }
 };
 
+var view = {
+  displayTodos: function(){
+    var todosUl = document.querySelector('ul');
+    todosUl.innerHTML = "";
+    for(var i = 0; i < todoList.todos.length; i++){
+      var todoLi = document.createElement('li');
+      var todo = todoList.todos[i];
+      
+      var todoTextWithCompletion = '';
+      if(todo.completed === true){
+        todoTextWithCompletion = '(x)' + todo.todoText;
+      } else {
+        todoTextWithCompletion = '( )' + todo.todoText;
+      }
+      
+      todoLi.innerHTML = todoTextWithCompletion;
+      todosUl.appendChild(todoLi);
+    }
+   
+  }
+};
 
-var displayTodosButton = document.getElementById('displayTodos');
-var toggleAllButton = document.getElementById('toggleAll');
+// var displayTodosButton = document.getElementById('displayTodos');
+// var toggleAllButton = document.getElementById('toggleAll');
 
-displayTodosButton.addEventListener('click', function(){
-  todoList.displayTodos();
-})
+// displayTodosButton.addEventListener('click', function(){
+//   todoList.displayTodos();
+// })
 
-toggleAllButton.addEventListener('click', function(){
-  todoList.toggleAll();
-  })
+// toggleAllButton.addEventListener('click', function(){
+//   todoList.toggleAll();
+//   })
   
   
   
