@@ -118,7 +118,7 @@ var view = {
       
       todoLi.id = i;
       todoLi.innerHTML = todoTextWithCompletion;
-      todoLi.appendChild("  " + this.createDeleteButton());
+      todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
     }
    
@@ -126,7 +126,7 @@ var view = {
   createDeleteButton : function(){
     var deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete item";
-    deleteButton.style.margin = "1em";
+    deleteButton.style.margin ="10px";
     deleteButton.className = 'deleteButton';
     return deleteButton;
   },
@@ -148,4 +148,4 @@ var view = {
 
 view.setUpEventListeners();
 
-//s
+
