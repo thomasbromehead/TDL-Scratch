@@ -136,12 +136,15 @@ var view = {
         //Get the element that was clicked on.
       
         var elementClicked = event.target;
-        var parentElementClicked = event.target.parentNode.id
+        // var parentElementClicked = event.target.parentNode.id
         if (elementClicked.className === "deleteButton"){
         // Delete LI item, ie: run handlers.deleteTodo();
-          handlers.deleteTodo(parseInt(parentElementClicked));
+          handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
       }
     });
   }
+};
 
 view.setUpEventListeners();
+
+
