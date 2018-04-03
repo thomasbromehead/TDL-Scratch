@@ -64,6 +64,22 @@ var todoList = {
     }
 };
 
+var handlers = {
+  displayTodos: function(){
+    todoList.displayTodos();
+  },
+  toggleAll: function(){
+    todoList.toggleAll();
+  },
+  addTodo: function(){
+    var newTodo = document.getElementById('addTodoTextInput');
+    var newTodoText = newTodo.value;
+    todoList.addTodo(newTodoText);
+    newTodo.value="";
+  },
+};
+
+
 var displayTodosButton = document.getElementById('displayTodos');
 var toggleAllButton = document.getElementById('toggleAll');
 
@@ -74,5 +90,6 @@ displayTodosButton.addEventListener('click', function(){
 toggleAllButton.addEventListener('click', function(){
   todoList.toggleAll();
   })
+  
   
   
