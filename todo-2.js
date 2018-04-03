@@ -126,6 +126,7 @@ var view = {
   createDeleteButton : function(){
     var deleteButton = document.createElement('button');
     deleteButton.textContent = "Delete item";
+    deleteButton.style.margin = "1em";
     deleteButton.className = 'deleteButton';
     return deleteButton;
   },
