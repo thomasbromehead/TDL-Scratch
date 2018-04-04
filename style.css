@@ -1,6 +1,7 @@
 /* Styles go here */
 
 body{
+  font-size:24px;
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
