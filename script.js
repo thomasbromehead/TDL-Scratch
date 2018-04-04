@@ -125,10 +125,10 @@ var view = {
    
   },
   createDeleteButton : function(){
-    var deleteButton = document.createElement('button');
-    deleteButton.textContent = "Delete item";
-    deleteButton.style.marginLeft ="50px";
-    deleteButton.className = 'deleteButton';
+    var deleteButton = document.createElement('span');
+    //deleteButton.textContent = "Delete item";
+    deleteButton.style.marginLeft ="10px";
+    deleteButton.className = 'far fa-trash-alt';
     return deleteButton;
   },
   setUpEventListeners: function(){
@@ -138,10 +138,10 @@ var view = {
         //Get the element that was clicked on.
       
         var elementClicked = event.target;
-        // var parentElementClicked = event.target.parentNode.id
-        if (elementClicked.className === "deleteButton"){
+        var parentElementClicked = event.target.parentNode.id;
+        if (elementClicked.className === "far fa-trash-alt"){
         // Delete LI item, ie: run handlers.deleteTodo();
-          handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+          handlers.deleteTodo(parseInt(parentElementClicked));
       }
     });
   }
@@ -149,4 +149,8 @@ var view = {
 
 view.setUpEventListeners();
 
+var test = document.querySelector('ul');
+test.addEventListener('click', function(event){
+  console.log(event.target);
+})
 
