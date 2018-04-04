@@ -139,7 +139,7 @@ var view = {
       
         var elementClicked = event.target;
         var parentElementClicked = event.target.parentNode.id;
-        if (elementClicked.className === "far fa-trash-alt"){
+        if (elementClicked.tagName === "svg"){
         // Delete LI item, ie: run handlers.deleteTodo();
           handlers.deleteTodo(parseInt(parentElementClicked));
       }
@@ -153,4 +153,6 @@ var test = document.querySelector('ul');
 test.addEventListener('click', function(event){
   console.log(event.target);
 })
+
+
 
