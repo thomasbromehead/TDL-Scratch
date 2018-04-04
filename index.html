@@ -4,13 +4,14 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
   </head>
 
   <body>
     
-    <h1>Simple To-Do List</h1>
+    <h1 style="color: gradient(white, red)">Simple To-Do List</h1>
     
     <div>
       <br />
@@ -18,9 +19,13 @@
       <input type="text" id="addTodoTextInput" value="Add me " />
       <br />
       <br />
+    </div>
+    <div>
       <button style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8) padding-right: 1em;" class="button" onclick="handlers.changeTodo()" id="changeTodo" type="submit">Change a to-do</button>
-      <input type="number" id="changeTodoNumberInput" value="" />
-      <input type="text" id="changedTodoTextInput" value="" />
+      <div>
+        <input style="width:15%; margin-top:5%" type="number" id="changeTodoNumberInput" value="" />
+        <input type="text" id="changedTodoTextInput" placeholder="New text here" />
+       </div>
     </div>
     
     <div>

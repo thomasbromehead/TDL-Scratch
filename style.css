@@ -1,6 +1,21 @@
 /* Styles go here */
 
-/* Styles go here */
+body{
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #5FBCD3, #2692AD);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+input{
+  border-radius: 5%;
+}
 
 .button {
   display: inline-block;
@@ -11,7 +26,10 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background: -webkit-linear-gradient(#e66465, #9198e5);
+  background: -moz-linear-gradient(#e66465, #9198e5);
+  background: -o-linear-gradient(#e66465, #9198e5);
+  background: linear-gradient(to right, #e66465 50%, #9198e5);;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
@@ -21,7 +39,7 @@
 
 .button:active {
   background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #333;
   transform: translateY(4px);
 }
 
@@ -33,8 +51,8 @@
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #8D9F87;
+  color: #999;
+  background-color: #fff;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
