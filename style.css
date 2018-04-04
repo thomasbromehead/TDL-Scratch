@@ -59,7 +59,7 @@ input{
   box-shadow: 0 9px #999;
 }
 
-.button--toggle:hover {background-color: #6F9283}
+.button--toggle:hover {background-color: #fff}
 
 .button--toggle:active {
   background-color: #CDC6A5;
