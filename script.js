@@ -118,6 +118,7 @@ var view = {
       
       todoLi.id = i;
       todoLi.innerHTML = todoTextWithCompletion;
+      todoLi.style.listStyle = "none";
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
     }
